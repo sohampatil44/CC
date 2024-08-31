@@ -1,0 +1,82 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+    font-family: Arial, sans-serif;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Cover the background */
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.container form {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.container p {
+    margin-top: 20px;
+}
+
+.container a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
