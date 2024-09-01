@@ -3,35 +3,142 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Developed By</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      body {
+        background-color: #f8f9fa;
+        color: #343a40;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background-color: #00509e; /* Lighter blue shade */
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .container {
+        flex: 1;
+        margin-top: 2rem;
+      }
+      .card {
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .card-header {
+        background-color: #b3e0ff;
+        color: #003366;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+      .card-header i {
+        margin-right: 10px;
+        font-size: 1.25rem;
+      }
+      .card-body {
+        font-size: 1.2rem;
+      }
+      .footer {
+        padding: 1.5rem;
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: auto;
+      }
+      .social-icons a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .social-icons a:hover {
+        color: #b3e0ff;
+      }
+      @media (max-width: 768px) {
+        body {
+          font-size: 0.9rem;
+        }
+        .card-header {
+          font-size: 1.25rem;
+        }
+        .card-body {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
+    <header class="header">
+      Developed By
+    </header>
+    
+    <div class="container">
+      <div class="card">
+        <div class="card-header"><i class="bi bi-person-circle"></i> Meet the Developers</div>
+        <div class="card-body">
+          <p>We are Soham Patil, Vaishnavi Pandey, Ishika Naik, and Krishna Mehta, TE B students studying at AP Shah Institute of Technology. We have developed this project as part of our learning experience in AI and ML.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header"><i class="bi bi-laptop"></i> Our Expertise</div>
+        <div class="card-body">
+          <p>We are still learning AI and ML and have tried our best to develop this project. Your feedback is valuable as we continue to grow and learn in this field.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header"><i class="bi bi-star"></i> A Commitment to Excellence</div>
+        <div class="card-body">
+          <p>Our work is driven by a commitment to excellence and a belief that technology should be accessible and beneficial to everyone. Whether it's developing predictive models, creating intelligent algorithms, or designing user-friendly interfaces, we strive for solutions that are both cutting-edge and user-centric with respect to Convenience Care.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header"><i class="bi bi-heart"></i> Passion for Health Tech</div>
+        <div class="card-body">
+          <p>The development of Convenience Care represents a convergence of our passion for AI and our dedication to improving healthcare accessibility. We believe that AI has the potential to transform the way we approach healthcare, making it more personalized and informative. This platform is a testament to that vision.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header"><i class="bi bi-rocket"></i> Join Us on This Journey</div>
+        <div class="card-body">
+          <p>We invite you to explore Convenience Care and experience firsthand the fusion of AI and healthcare. Together, we can empower individuals with knowledge, promote well-being, and contribute to a brighter and healthier future.</p>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <p>Convenience Care - Phone: 9075643212 | Email: info@conveniencecare.com</p>
+      <p>&copy; 2024 Convenience Care. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/conveniencecare" target="_blank" class="text-white"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/conveniencecare" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </footer>
 
-  <div class="container my-4 mt-4">
-<h6>    About Junaid Khan: Your AI & ML Engineer
-</h6>
-<h5>Meet the Developer</h5>
-
-<p>Hello, I'm Junaid Khan, your AI and Machine Learning Engineer with over 5 years of experience in the field. I am passionate about harnessing the power of technology to make a positive impact on people's lives. Allow me to share a bit about my journey in the world of artificial intelligence and machine learning.
-</p>
-<h5>My Expertise
-</h5>
-<p>With a strong academic background in computer science and a deep fascination for AI and ML, I embarked on a journey that has taken me across the globe, working on diverse and innovative projects. Over the years, I've had the privilege of collaborating on international projects that have pushed the boundaries of what's possible in AI and ML.
-</p>
-<h5>A Commitment to Excellence
-</h5>
-<p>My work is driven by a commitment to excellence and a belief that technology should be accessible and beneficial to everyone. Whether it's developing predictive models, creating intelligent algorithms, or designing user-friendly interfaces, I strive for solutions that are both cutting-edge and user-centric.
-</p>
-<h5>Passion for Health Tech
-</h5>
-<p>The development of [Your Website Name] represents a convergence of my passion for AI and my dedication to improving healthcare accessibility. I believe that AI has the potential to transform the way we approach healthcare, making it more personalized and informative. This platform is a testament to that vision.
-</p>
-<h5>Join Me on this Journey
-</h5>
-<p>I invite you to explore [Your Website Name] and experience firsthand the fusion of AI and healthcare. Together, we can empower individuals with knowledge, promote well-being, and contribute to a brighter and healthier future.
-</p>
-  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
