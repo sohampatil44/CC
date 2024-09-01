@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="loginsignin.css">
 </head>
 <body>
     <video autoplay muted loop id="bg-video">
@@ -13,15 +13,17 @@
     </video>
 
     <div class="login-container">
-        <h2>Login</h2>
-        <form method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form method="post">
+                
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
     </div>
 </body>
 </html>

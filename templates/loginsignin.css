@@ -1,0 +1,88 @@
+/* Ensure full viewport height */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire viewport */
+    z-index: -1; /* Places the video behind other content */
+}
+
+/* Container for centering the form */
+.login-container, .signin-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 100vh;            /* Full viewport height */
+    margin: 0;                /* Remove default margin */
+}
+
+/* Box styling for forms */
+.login-box, .signin-box {
+    width: 300px;             /* Adjust width as needed */
+    padding: 60px;            /* Add padding */
+    border-radius: 10px;      /* Rounded corners */
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2ebf2 100%); /* Subtle blue-green gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #ddd;   /* Light border for added definition */
+}
+
+/* Heading styling */
+.login-box h2, .signin-box h2 {
+    margin-bottom: 20px;      /* Space below heading */
+    color: #00796b; 
+    font-size: 35px;          /* Dark teal for headings */
+}
+
+/* Label styling */
+.login-box label, .signin-box label {
+    display: block;
+    margin-bottom: 5px;       /* Space below labels */
+    color: #004d40;           /* Darker green for labels */
+}
+
+/* Input fields styling */
+.login-box input, .signin-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;      /* Space between input fields */
+    border-radius: 5px;
+    border: 1px solid #b2dfdb; /* Light teal border for inputs */
+}
+
+/* Button styling */
+.login-box button, .signin-box button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #28c7b5; /* Teal button color */
+    color: #fff;               /* White text color */
+    cursor: pointer;           /* Pointer cursor on hover */
+}
+
+.login-box button:hover, .signin-box button:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+/* Link styling */
+.login-box p, .signin-box p {
+    margin-top: 15px;         /* Space above the paragraph */
+    color: #00796b;           /* Teal color for text */
+}
+
+.login-box a, .signin-box a {
+    color: #004d40;           /* Darker green for links */
+    text-decoration: none;    /* Remove underline from links */
+}
+
+.login-box a:hover, .signin-box a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
