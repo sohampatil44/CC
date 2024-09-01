@@ -5,44 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog Post</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+      html, body {
+        height: 100%; /* Full height for the html and body */
+        margin: 0; /* Remove default margins */
+        display: flex; /* Use flexbox for the layout */
+        flex-direction: column; /* Arrange items in a column */
+      }
+      body {
+        background-color: #f8f9fa; /* Light grey background */
+        color: #343a40; /* Darker text color for readability */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px; /* Increased base font size */
+        line-height: 1.8; /* Improved line spacing for readability */
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        flex: 1; /* Allow container to grow and shrink */
+        margin-top: 0; /* Remove top margin */
+      }
+      .blog-title {
+        color: #007bff; /* Blue color for the title */
+        margin-bottom: 2rem;
+        font-size: 3rem; /* Larger font size for the title */
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 4px solid #007bff;
+        padding-bottom: 0.5rem;
+      }
+      .blog-subtitle {
+        color: #6c757d; /* Grey color for subtitles */
+        font-size: 1.5rem; /* Slightly larger subtitle font */
+        margin-bottom: 2rem; /* Increased margin for spacing */
+        text-align: center;
+      }
+      .highlight, .feature-box, .conclusion-box {
+        background-color: #e7f1ff; /* Light blue background for highlighted sections */
+        padding: 1rem 1.5rem; /* Reduced padding at the top */
+        border-left: 4px solid #007bff; /* Blue left border */
+        margin-bottom: 2rem; /* More space between sections */
+        font-size: 1.2rem; /* Slightly larger font size in highlighted sections */
+        text-align: left; /* Align text to the left */
+        border-radius: 8px; /* Rounded corners for the box */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        position: relative; /* Allow positioning of content to remove margin */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+      }
+      .highlight:hover, .feature-box:hover, .conclusion-box:hover {
+        transform: translateY(-5px); /* Slight lift effect on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      }
+      .highlight h3, .feature-box h3, .conclusion-box h3 {
+        color: #007bff; /* Blue color for headings */
+        text-align: left; /* Align headings to the left */
+        margin-top: 0; /* Remove top margin for headings */
+      }
+      .feature-list {
+        margin-bottom: 2.5rem; /* Increased spacing below the list */
+        font-size: 1.2rem; /* Larger font size for list items */
+      }
+      .feature-list li {
+        margin-bottom: 1rem; /* More space between list items */
+      }
+      .feature-list li::marker {
+        color: #007bff; /* Blue color for bullet points */
+      }
+      h3 {
+        margin-top: 3rem; /* More space above headings */
+        margin-bottom: 1.5rem; /* Increased space below headings */
+        font-size: 1.8rem; /* Larger font size for section headings */
+      }
+      .footer {
+        padding: 1.5rem;
+        background-color: #343a40; /* Dark footer */
+        color: white;
+        text-align: center;
+        font-size: 1.2rem; /* Slightly larger footer font size */
+        position: relative; /* Ensure footer stays at the bottom */
+        bottom: 0; /* Stick to the bottom of the page */
+        width: 100%; /* Full width */
+      }
+      .footer a {
+        color: #007bff; /* Blue color for links */
+        text-decoration: none; /* Remove underline from links */
+      }
+      .footer a:hover {
+        text-decoration: underline; /* Underline on hover */
+      }
+      .social-icons {
+        margin-top: 1rem; /* Space above social icons */
+      }
+      .social-icons i {
+        font-size: 1.5rem; /* Size of social icons */
+        margin: 0 0.5rem; /* Space between icons */
+      }
+      .icon-medical {
+        color: #007bff; /* Blue color for medical icons */
+        margin-right: 0.5rem;
+      }
+      @media (max-width: 768px) {
+        body {
+          font-size: 20px; /* Adjust font size for smaller screens */
+        }
+        .blog-title {
+          font-size: 2.5rem; /* Adjust title size for smaller screens */
+        }
+        .blog-subtitle {
+          font-size: 1.25rem; /* Adjust subtitle size for smaller screens */
+        }
+        .highlight, .feature-box, .conclusion-box {
+          padding: 1rem; /* Adjust padding for smaller screens */
+        }
+        .feature-list {
+          font-size: 1rem; /* Adjust font size for list items on smaller screens */
+        }
+        h3 {
+          font-size: 1.5rem; /* Adjust heading size for smaller screens */
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container my-4 mt-4">
-
-        <h2 class="text-center"> Building a Symptom-Based Disease Diagnosis Web App with Flask and Machine Learning</h2>
-        <p>In the age of technology and information, access to accurate and timely healthcare is more critical than ever. With the increasing importance of remote healthcare solutions, we embarked on a journey to develop a symptom-based disease diagnosis web application. Leveraging Flask for the backend and a Decision Tree Classifier model, we created a user-friendly platform that can help users identify potential illnesses based on their reported symptoms.</p>
-
-        <h3>The Problem</h3>
+    <div class="container">
+      <h2 class="blog-title">
+        <i class="bi bi-heart-pulse icon-medical"></i> Convenience Care - A Symptom-Based Disease Diagnosis Web App with Flask and Machine Learning
+      </h2>
+      
+      <p class="blog-subtitle">In the age of technology and information, access to accurate and timely healthcare is more critical than ever. With the increasing importance of remote healthcare solutions, we embarked on a journey to develop a symptom-based disease diagnosis web application. Leveraging Flask for the backend and a Decision Tree Classifier model, we created a user-friendly platform that can help users identify potential illnesses based on their reported symptoms.</p>
+      
+      <div class="highlight">
+        <h3><i class="bi bi-exclamation-triangle icon-medical"></i> The Problem</h3>
         <p>The project began with recognizing a common issue: people often experience symptoms and want quick answers about their health concerns. It can be challenging to differentiate between various diseases, especially when symptoms overlap. Our goal was to provide a convenient solution for users to input their symptoms and receive potential diagnoses.</p>
+      </div>
 
-        <h3>The Solution</h3>
+      <div class="highlight">
+        <h3><i class="bi bi-shield-check icon-medical"></i> The Solution</h3>
         <p>We developed a web app that allows users to enter a list of symptoms they are experiencing. The app then uses a pre-trained Decision Tree Classifier model to predict the most likely disease based on the provided symptoms. Here's how it works:</p>
-
         <ol>
-            <li><b><strong>Symptom Input:</strong></b> Users enter their symptoms through a user-friendly interface. The web app supports a wide range of symptoms, making it versatile for different scenarios.</li>
-            <li><b><strong>Machine Learning Model:</strong></b> We trained a Decision Tree Classifier using a dataset containing symptoms and corresponding diseases. The model is capable of predicting diseases based on input symptoms.</li>
-            <li><b><strong>Prediction:</strong></b> The app uses the model to predict the most likely disease, providing users with instant information about potential health concerns.</li>
-            <li><b><strong>Additional Information: </strong></b> To enhance user experience, the app also provides additional information about the predicted disease. This includes a description of the disease, recommended precautions, medications, dietary advice, and workout tips.</li>
-
+          <li><b><i class="bi bi-pencil-square icon-medical"></i> Symptom Input:</b> Users enter their symptoms through a user-friendly interface. The web app supports a wide range of symptoms, making it versatile for different scenarios.</li>
+          <li><b><i class="bi bi-cpu icon-medical"></i> Machine Learning Model:</b> We trained a Decision Tree Classifier using a dataset containing symptoms and corresponding diseases. The model is capable of predicting diseases based on input symptoms.</li>
+          <li><b><i class="bi bi-graph-up-arrow icon-medical"></i> Prediction:</b> The app uses the model to predict the most likely disease, providing users with instant information about potential health concerns.</li>
+          <li><b><i class="bi bi-info-circle icon-medical"></i> Additional Information:</b> To enhance user experience, the app also provides additional information about the predicted disease, including descriptions, precautions, medications, dietary advice, and workout tips.</li>
         </ol>
-        
+      </div>
 
-        <h3>Key Features</h3>
-        <ul type="circle">
-            <li><b><strong>User-Friendly Interface:</strong></b> The web app boasts an intuitive and easy-to-navigate interface, ensuring that users can input their symptoms without any hassle.</li>
-            <li><b><strong>Accurate Predictions:</strong></b> Leveraging machine learning, our model provides accurate disease predictions based on the symptoms provided by the user.</li>
-            <li><b><strong>Comprehensive Information: </strong></b>In addition to predictions, the app offers comprehensive information about the predicted disease, including descriptions, precautions, medications, diet recommendations, and workout tips.</li>
-            <li><b><strong>ducational Content:</strong></b> To empower users with knowledge, the app includes informative blog posts about various health topics.</li>
+      <div class="feature-box">
+        <h3><i class="bi bi-lightbulb icon-medical"></i> Key Features</h3>
+        <ul class="feature-list">
+          <li><b><i class="bi bi-ui-checks icon-medical"></i> User-Friendly Interface:</b> The web app features an intuitive and easy-to-use interface, making it accessible to users with varying levels of technical expertise.</li>
+          <li><b><i class="bi bi-database icon-medical"></i> Machine Learning Model:</b> Utilizes a robust Decision Tree Classifier model for accurate disease prediction based on user symptoms.</li>
+          <li><b><i class="bi bi-info-square icon-medical"></i> Comprehensive Information:</b> Provides users with detailed information about potential diseases, including symptoms, treatment options, and lifestyle recommendations.</li>
+          <li><b><i class="bi bi-shield-check icon-medical"></i> Reliable Predictions:</b> Aims to deliver reliable and relevant predictions, aiding users in making informed decisions about their health.</li>
+          <li><b><i class="bi bi-tools icon-medical"></i> Continuous Improvement:</b> The web app is designed to evolve and improve over time, incorporating user feedback and advancements in machine learning techniques.</li>
         </ul>
+      </div>
 
-        <br>
-
-        <h3>Conclusion</h3>
-        <p>Our Symptom-Based Disease Diagnosis Web App brings the power of machine learning and healthcare information to the fingertips of users. It serves as a valuable resource for individuals looking to gain insights into their health conditions quickly and conveniently. By combining technology and healthcare, we aim to make healthcare more accessible and user-centric.
-
-In an era where remote healthcare solutions are gaining prominence, this project represents a significant step forward in providing accessible and reliable healthcare information to the masses. We hope that this project will contribute to better health awareness and ultimately improve the well-being of individuals worldwide.</p>
-
+      <div class="conclusion-box">
+        <h3><i class="bi bi-people icon-medical"></i> Conclusion</h3>
+        <p>Our symptom-based disease diagnosis web app is a testament to the power of combining modern web technologies with machine learning. By providing users with a tool to quickly assess their health concerns, we aim to improve accessibility to healthcare information. As we continue to enhance the app, we remain committed to delivering a valuable resource for individuals seeking timely and accurate health information.</p>
+        <p>For more information or to try out the web app, please visit our project page or contact us directly.</p>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <footer class="footer">
+      <p>Convenience Care - Phone: 9075643212 | Email: info@conveniencecare.com </p>
+      <p>&copy; 2024 Convenience Care. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/conveniencecare" target="_blank" class="text-white"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/conveniencecare" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9s5DaGyPfFiNG5j7eMQlYkzK7F2G1BltJZ8xO3zTqA8bWv2vKZA" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-5S/1eGkJd2o3Bv3T6FvO2M8JpD6fF6/X8KkP1k4nN9bHoVRN8kFmgFb6KeT4Pp8H" crossorigin="anonymous"></script>
   </body>
 </html>
