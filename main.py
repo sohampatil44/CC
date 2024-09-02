@@ -36,7 +36,7 @@ def helper(dis):
     die = [die for die in die.values]
 
     wrkout = workout[workout['disease'] == dis]['workout']
-
+    wrkout = [wrkout for wrkout in wrkout.values]
     return desc, pre, med, die, wrkout
 
 # Dictionary of symptoms and corresponding indices
@@ -87,9 +87,16 @@ diseases_list = {
 # Model Prediction function
 def get_predicted_value(patient_symptoms):
     input_vector = np.zeros(len(symptoms_dict))
+
     for item in patient_symptoms:
-        input_vector[symptoms_dict[item]] = 1
-    return diseases_list[svc.predict([input_vector])[0]]
+        if item in symptoms_dict:
+            input_vector[symptoms_dict[item]] = 1
+        else:
+            print(f"Warning: '{item}' not found in symptoms_dict.")
+
+    prediction = svc.predict([input_vector])[0]
+    return diseases_list.get(prediction, "Unknown disease")
+
 
 # Routes
 
@@ -149,13 +156,16 @@ def predict():
             user_symptoms = [s.strip() for s in symptoms.split(',')]
             user_symptoms = [symptom.strip("[]' ") for symptom in user_symptoms]
             predicted_disease = get_predicted_value(user_symptoms)
-            des, pre, med, die, wrkout = helper(predicted_disease)
+            desc, pre, med, die, wrkout = helper(predicted_disease)
 
             my_pre = []
             for i in pre[0]:
                 my_pre.append(i)
 
-            return render_template('index.html', predicted_disease=predicted_disease, dis_des=des,
+            else:
+                my_pre = ["No precautions available"]    
+
+            return render_template('index.html', predicted_disease=predicted_disease, dis_des=desc,
                                    dis_pre=my_pre, dis_med=med, dis_diet=die,
                                    dis_wrkout=wrkout)
 
